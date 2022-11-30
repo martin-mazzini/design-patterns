@@ -3,8 +3,8 @@ package decorator.mine;
 /**
  *  A common data interface, which defines read and write operations
  */
-public interface DataSource {
-    void writeData(String data);
+public interface StringPrinter {
+    void print(String data);
 
-    String readData();
+
 }

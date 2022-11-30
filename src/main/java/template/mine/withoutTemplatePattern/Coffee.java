@@ -1,4 +1,4 @@
-package template.mine;
+package template.mine.withoutTemplatePattern;
 
 import java.io.*;
 

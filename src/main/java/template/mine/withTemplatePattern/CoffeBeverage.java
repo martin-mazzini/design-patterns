@@ -1,6 +1,6 @@
 package template.mine.withTemplatePattern;
 
-public class Coffee extends CaffeineBeverage {
+public class CoffeBeverage extends CaffeineBeverage {
 
     @Override
     void brew() {

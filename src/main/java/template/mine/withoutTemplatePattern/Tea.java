@@ -1,25 +1,25 @@
-package template.mine;
+package template.mine.withoutTemplatePattern;
 
 public class Tea {
 
 
     public void prepareRecipe () {
         boilWater();
-        brewCoffeeGrinds();
+        steppingTea();
         pourInCup();
-        addSugarAndMilk();
+        addLemon();
     }
 
     public void boilWater() {
         System.out.println ("Boiling Water");
     }
-    public void brewCoffeeGrinds() {
+    public void steppingTea() {
         System.out.println ("Steeping the tea");
     }
     public void pourInCup() {
         System.out.println ("Pouring into Cup");
     }
-    public void addSugarAndMilk() {
-        System.out.println ("Adding Sugar and Milk");
+    public void addLemon() {
+        System.out.println ("Adding lemon");
     }
 }

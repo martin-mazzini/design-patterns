@@ -2,10 +2,10 @@ package decorator.mine.decorators;
 
 import decorator.mine.StringPrinter;
 
-public class StringUppercaseDecorator extends StringDecorator {
+public class UpperCaseDecorator extends StringDecorator {
 
 
-    public StringUppercaseDecorator(StringPrinter source) {
+    public UpperCaseDecorator(StringPrinter source) {
         super(source);
     }
 

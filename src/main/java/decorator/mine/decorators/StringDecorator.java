@@ -1,25 +1,21 @@
 package decorator.mine.decorators;
 
-import decorator.mine.DataSource;
+import decorator.mine.StringPrinter;
 
 /**
  * Abstract base decorator
  */
-public abstract class DataSourceDecorator implements DataSource {
+public abstract class StringDecorator implements StringPrinter {
 
-    private DataSource wrappee;
+    private StringPrinter wrappee;
 
-    DataSourceDecorator(DataSource source) {
+    StringDecorator(StringPrinter source) {
         this.wrappee = source;
     }
 
     @Override
-    public void writeData(String data) {
-        wrappee.writeData(data);
+    public void print(String data) {
+        wrappee.print(data);
     }
 
-    @Override
-    public String readData() {
-        return wrappee.readData();
-    }
 }

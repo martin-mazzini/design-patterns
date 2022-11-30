@@ -1,4 +1,4 @@
-package decorator;
+package decorator.refactoringguru;
 
 /**
  *  A common data interface, which defines read and write operations

@@ -1,6 +1,6 @@
-package decorator.decorators;
+package decorator.refactoringguru.decorators;
 
-import decorator.DataSource;
+import decorator.refactoringguru.DataSource;
 
 /**
  * Abstract base decorator

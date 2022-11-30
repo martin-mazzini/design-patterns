@@ -1,16 +1,17 @@
-package template.mine.withoutTemplatePattern;
+package template.mine.withTemplatePattern;
 
-import template.mine.withoutTemplatePattern.Coffee;
-import template.mine.withoutTemplatePattern.Tea;
+
 
 public class Client {
 
     public static void main(String[] args) {
 
-        Coffee coffee = new Coffee();
+        CoffeBeverage coffee = new CoffeBeverage();
+        System.out.println("-----------------PREPARING COFFE--------------------");
         coffee.prepareRecipe();;
 
-        Tea tea = new Tea();
+        System.out.println("------------------------PREPARING TEA---------------------");
+        TeaBeverage tea = new TeaBeverage();
         tea.prepareRecipe();;
 
 

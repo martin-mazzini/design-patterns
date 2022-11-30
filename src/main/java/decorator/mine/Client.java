@@ -1,26 +1,28 @@
-package decorator.refactoringguru;
+package decorator.mine;
 
-import decorator.refactoringguru.decorators.CompressionDecorator;
-import decorator.refactoringguru.decorators.DataSourceDecorator;
-import decorator.refactoringguru.decorators.EncryptionDecorator;
+
+import decorator.mine.decorators.StringDecorator;
+import decorator.mine.decorators.UpperCaseDecorator;
+import decorator.mine.decorators.NoWhiteSpaceDecorator;
 
 public class Client {
 
 
     public static void main(String[] args) {
-        String salaryRecords = "Name,Salary\nJohn Smith,100000\nSteven Jobs,912000";
-        DataSourceDecorator encoded = new CompressionDecorator(
-                new EncryptionDecorator(
-                        new FileDataSource("OutputDemo.txt")));
-        encoded.writeData(salaryRecords);
-        DataSource plain = new FileDataSource("OutputDemo.txt");
 
-        System.out.println("- Input ----------------");
-        System.out.println(salaryRecords);
-        System.out.println("- Encoded --------------");
-        System.out.println(plain.readData());
-        System.out.println("- Decoded --------------");
-        System.out.println(encoded.readData());
+        String a = "Decorator is a structural pattern that allows adding new behaviors to objects" +
+                " dynamically by placing them inside special wrapper objects, called decorators.";
+
+        StringPrinter printer = new StringPrinterImpl();
+        printer.print(a);
+
+        StringDecorator upperCase = new UpperCaseDecorator(printer);
+        upperCase.print(a);
+
+        StringDecorator upperCaseAndTrimmed = new UpperCaseDecorator(new NoWhiteSpaceDecorator(printer));
+        upperCaseAndTrimmed.print(a);
+
+
     }
 
 

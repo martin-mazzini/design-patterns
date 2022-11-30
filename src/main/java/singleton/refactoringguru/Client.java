@@ -1,4 +1,4 @@
-package singleton;
+package singleton.refactoringguru;
 
 public class Client {
 

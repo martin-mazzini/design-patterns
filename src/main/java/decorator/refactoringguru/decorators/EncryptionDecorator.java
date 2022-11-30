@@ -1,9 +1,8 @@
-package decorator.decorators;
+package decorator.refactoringguru.decorators;
 
 
-import decorator.FileDataSource;
+import decorator.refactoringguru.FileDataSource;
 
-import javax.sql.DataSource;
 import java.util.Base64;
 
 public class EncryptionDecorator extends DataSourceDecorator {
