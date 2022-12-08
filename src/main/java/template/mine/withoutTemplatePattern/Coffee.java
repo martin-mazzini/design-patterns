@@ -14,11 +14,9 @@ public class Coffee {
     }
 
     public void boilWater() {
-        System.out.println ("Boiling Water");
+        System.out.println ("Boiling WATER");
     }
-    public void brewCoffeeGrinds() {
-        System.out.println ("Dripping coffee though filter");
-    }
+    public void brewCoffeeGrinds() {System.out.println ("Dripping coffee though filter");}
     public void pourInCup() {
         System.out.println ("Pouring into Cup");
     }

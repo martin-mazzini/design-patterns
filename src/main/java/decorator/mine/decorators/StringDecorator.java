@@ -3,7 +3,7 @@ package decorator.mine.decorators;
 import decorator.mine.StringPrinter;
 
 /**
- * Abstract base decorator
+ * Base decorator
  */
 public abstract class StringDecorator implements StringPrinter {
 

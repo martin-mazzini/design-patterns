@@ -4,6 +4,9 @@ package decorator.mine.decorators;
 import decorator.mine.StringPrinter;
 import decorator.mine.StringPrinterImpl;
 
+/**
+ * Concrete Decorator
+ */
 public class NoWhiteSpaceDecorator extends StringDecorator {
 
     public NoWhiteSpaceDecorator(StringPrinter source) {

@@ -13,13 +13,9 @@ public class Client {
         String a = "Decorator is a structural pattern that allows adding new behaviors to objects" +
                 " dynamically by placing them inside special wrapper objects, called decorators.";
 
-        StringPrinter printer = new StringPrinterImpl();
-        printer.print(a);
+        StringDecorator upperCaseAndTrimmed = new UpperCaseDecorator(new NoWhiteSpaceDecorator(new StringPrinterImpl()));
 
-        StringDecorator upperCase = new UpperCaseDecorator(printer);
-        upperCase.print(a);
 
-        StringDecorator upperCaseAndTrimmed = new UpperCaseDecorator(new NoWhiteSpaceDecorator(printer));
         upperCaseAndTrimmed.print(a);
 
 

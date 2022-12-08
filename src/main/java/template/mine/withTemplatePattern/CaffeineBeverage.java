@@ -8,24 +8,35 @@ public abstract class CaffeineBeverage {
      *  A hook is an optional step with an empty body.
      */
 
-    public void prepareRecipe () {
+    /** Template method
+     */
+    public final void prepareRecipe () {
+
+        //parte del template method
         boilWater();
+
+        //obligatorio
         brew();
+
+        //parte del template method
         pourInCup();
+
+        //obligatorio
         addCondiments();
+
+        //paso opcional
         finalStep();
     }
 
-    public void finalStep() {}
+    public void finalStep(){};
 
-
-    public void boilWater() {
-        System.out.println ("Boiling Water");
+    public final void boilWater() {
+        System.out.println ("Boiling WATER");
     }
 
     abstract void brew();
 
-    public void pourInCup() {
+    public final void pourInCup() {
         System.out.println ("Pouring into Cup");
     }
 

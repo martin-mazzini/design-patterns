@@ -2,6 +2,9 @@ package decorator.mine.decorators;
 
 import decorator.mine.StringPrinter;
 
+/**
+ * Concrete Decorator
+ */
 public class UpperCaseDecorator extends StringDecorator {
 
 
