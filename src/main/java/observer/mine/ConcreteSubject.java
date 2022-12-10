@@ -1,4 +1,4 @@
-package observer;
+package observer.mine;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +22,9 @@ public class ConcreteSubject implements Subject {
     }
 
     @Override
-    public void notifyObservers() {
+    public void notifyObservers(Event event) {
         for (Observer observer : this.observers) {
-            observer.update(this);
+            observer.update(event);
         }
     }
 
@@ -32,7 +32,7 @@ public class ConcreteSubject implements Subject {
     // will cause the observers to be notified.
     public void setState(int state) {
         this.state = state;
-        this.notifyObservers();
+        this.notifyObservers(new Event("State change", "State was changed to " + state));
     }
 
     public int getState() {
