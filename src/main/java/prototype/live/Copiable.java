@@ -1,2 +1,7 @@
-package prototype.live;public interface Copiable {
+package prototype.live;
+
+public interface Copiable {
+
+    public Shape copy();
+
 }

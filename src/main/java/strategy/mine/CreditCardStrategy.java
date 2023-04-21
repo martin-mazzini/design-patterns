@@ -3,6 +3,8 @@ package strategy.mine;
 
 
 public class CreditCardStrategy implements PaymentStrategy {
+
+    private static final double CREDIT_CARD_DISCOUNT = 0.95;
     private String name;
     private String cardNumber;
     private String cvv;
@@ -16,8 +18,10 @@ public class CreditCardStrategy implements PaymentStrategy {
     }
 
     public void pay(int amount) {
-        double finalAmount = 0.99 * amount;
-        //do some stuff specific to creditCards
+        System.out.println("Paying with Credit Card. Card data: " + name + ", " + cardNumber + ", " + cvv + ", " + dateOfExpiry);
+        System.out.println("Validating credit card...");
+        System.out.println("Processing payment. Calling some API...");
+        double finalAmount = CREDIT_CARD_DISCOUNT * amount;
         System.out.println(finalAmount + " paid with credit/debit card");
     }
 }

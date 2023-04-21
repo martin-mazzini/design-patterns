@@ -1,24 +1,25 @@
 package factorypattenrs.simplefactorymethod;
 
-import factorypattenrs.simplefactorymethod.polygons.*;
+
+import factorypattenrs.simplefactorymethod.polygons.Heptagon;
+import factorypattenrs.simplefactorymethod.polygons.Pentagon;
+import factorypattenrs.simplefactorymethod.polygons.Polygon;
+import factorypattenrs.simplefactorymethod.polygons.Triangle;
 
 public class PolygonFactory {
-    public Polygon getPolygon(int numberOfSides) {
-        if(numberOfSides == 3) {
+
+
+    public Polygon getPolygon(String polygonStr) {
+        if (polygonStr.equals("TRIANGULO")){
             return new Triangle();
-        }
-        if(numberOfSides == 4) {
-            return new Square();
-        }
-        if(numberOfSides == 5) {
+        }else if(polygonStr.equals("PENTAGONO")){
             return new Pentagon();
-        }
-        if(numberOfSides == 7) {
+        }else if(polygonStr.equals("")){
             return new Heptagon();
+        } else {
+            throw new RuntimeException("EL STRING PASADO NO MAPEA A NINGUN POLIGONO: " + polygonStr);
         }
-        else if(numberOfSides == 8) {
-            return new Octagon();
-        }
-        return null;
     }
+
+
 }

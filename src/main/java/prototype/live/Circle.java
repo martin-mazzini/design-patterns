@@ -1,6 +1,10 @@
-package prototype.refactoringguru;
+package prototype.live;
+
+
 
 public class Circle extends Shape {
+
+
     private int radius;
 
     public Circle(int x, int y, String color, int radius) {
@@ -8,14 +12,9 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    protected Circle(Circle target) {
-        super(target);
-        this.radius = target.radius;
-    }
-
-    @Override
-    public Shape cloneObject() {
-        return new Circle(this);
+    public Circle(Circle aCopiar){
+        super(aCopiar);
+        this.radius = aCopiar.radius;
     }
 
     @Override
@@ -25,11 +24,17 @@ public class Circle extends Shape {
         return shape2.radius == radius;
     }
 
-
     @Override
     public String toString() {
         return "Circle{" +
                 "radius=" + radius +
                 '}' + " "+ super.toString();
     }
+
+    @Override
+    public Shape copy() {
+       return new Circle(this);
+    }
+
+
 }

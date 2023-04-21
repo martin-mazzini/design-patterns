@@ -13,6 +13,7 @@ public class Client {
         // Call the accept() method on the elements, passing the visitor as an argument
         elementA.accept(visitor);
         elementB.accept(visitor);
+
     }
 
 }

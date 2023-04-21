@@ -5,7 +5,6 @@ import java.io.*;
 public class Coffee {
 
 
-
     public void prepareRecipe () {
         boilWater();
         brewCoffeeGrinds();
@@ -14,7 +13,7 @@ public class Coffee {
     }
 
     public void boilWater() {
-        System.out.println ("Boiling WATER");
+        System.out.println ("Boiling water");
     }
     public void brewCoffeeGrinds() {System.out.println ("Dripping coffee though filter");}
     public void pourInCup() {

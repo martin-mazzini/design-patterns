@@ -1,4 +1,4 @@
-package strategy.mine;
+package strategy.live;
 
 public class Item {
 

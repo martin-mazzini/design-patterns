@@ -1,2 +1,6 @@
-package composite.live;public interface Component {
+package composite.live;
+
+public interface Component {
+
+    public int getPrice();
 }

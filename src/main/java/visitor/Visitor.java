@@ -1,7 +1,7 @@
 package visitor;
 
 public interface Visitor {
-    void visitElementA(ElementA element);
 
+    void visitElementA(ElementA element);
     void visitElementB(ElementB element);
 }

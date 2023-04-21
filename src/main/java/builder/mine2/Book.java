@@ -11,8 +11,10 @@ public class Book {
     private final Year published;
     private final String description;
 
-
-
+    //Quiero poder setear o no cada uno de los parametros.
+    //Cuantos constructores tendria que tener?
+    //Si el constructor tiene el mismo tipo, es posible confundirse los parametros al pasar
+    //No podemos crear dos constructores con la misma firma
 
 
     public Book(String isbn, String title) {

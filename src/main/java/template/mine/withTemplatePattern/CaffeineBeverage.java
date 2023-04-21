@@ -13,6 +13,8 @@ public abstract class CaffeineBeverage {
     public final void prepareRecipe () {
 
         //parte del template method
+
+
         boilWater();
 
         //obligatorio
@@ -26,9 +28,11 @@ public abstract class CaffeineBeverage {
 
         //paso opcional
         finalStep();
+
     }
 
-    public void finalStep(){};
+    protected void finalStep(){};
+
 
     public final void boilWater() {
         System.out.println ("Boiling WATER");

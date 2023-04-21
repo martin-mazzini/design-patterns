@@ -1,8 +1,9 @@
-package strategy.mine;
+package strategy.live.strategies;
 
 
+import strategy.mine.PaymentStrategy;
 
-public class CreditCardStrategy implements PaymentStrategy {
+public class CreditCardStrategy implements PaymentMethod {
 
     private static final double CREDIT_CARD_DISCOUNT = 0.95;
     private String name;

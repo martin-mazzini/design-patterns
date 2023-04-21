@@ -2,7 +2,7 @@ package strategy.mine;
 
 
 import java.util.ArrayList;
-
+// Context
 public class ShoppingCart {
     //List of items
     ArrayList<Item> items;
@@ -21,16 +21,20 @@ public class ShoppingCart {
         this.items.remove(item);
     }
 
-    public int calculateTotal(){
+
+    public void pay(){
         int sum = 0;
         for(Item item : items){
             sum += item.getPrice();
         }
-        return sum;
+        paymentMethod.pay(sum);
     }
 
-    public void pay(){
-        int amount = calculateTotal();
-        paymentMethod.pay(amount);
+    public void setPaymentMethod(PaymentStrategy paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
+
+
+
+
 }

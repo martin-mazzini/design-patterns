@@ -1,4 +1,4 @@
-package composite;
+package composite.mine;
 
 public class File extends FileSystemComponent {
 

@@ -5,4 +5,11 @@ public class Heptagon implements Polygon {
     public String getType() {
         return "Heptagon";
     }
+
+    @Override
+    public Integer getNumberOfSides() {
+        return 7;
+    }
+
+
 }

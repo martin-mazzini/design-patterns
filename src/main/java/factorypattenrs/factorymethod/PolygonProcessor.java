@@ -4,16 +4,15 @@ import factorypattenrs.factorymethod.polygons.*;
 
 public abstract class PolygonProcessor {
 
-    public void process(){
+    public Polygon process(){
+
         Polygon polygon = createPolygon();
 
-        System.out.println("Processing square " + polygon.getType());
+        System.out.println("Procesando poligono " + polygon.getType());
 
-        //do something with polygon
-        System.out.println("Drawing shape: " + polygon.getType());
+        System.out.println("Cantidad de lados del poligono" + polygon.getType());
 
-
-        return;
+        return polygon;
     }
 
     protected abstract Polygon createPolygon();

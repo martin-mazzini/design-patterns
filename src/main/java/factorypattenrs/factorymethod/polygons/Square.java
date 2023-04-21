@@ -7,4 +7,9 @@ public class Square implements Polygon {
     public String getType() {
         return "Square";
     }
+
+    @Override
+    public Integer getNumberOfSides() {
+        return 4;
+    }
 }

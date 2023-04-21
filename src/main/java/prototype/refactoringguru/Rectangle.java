@@ -1,4 +1,4 @@
-package prototype;
+package prototype.refactoringguru;
 
 public class Rectangle extends Shape {
 

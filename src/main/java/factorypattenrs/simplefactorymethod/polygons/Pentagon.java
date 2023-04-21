@@ -5,4 +5,9 @@ public class Pentagon implements Polygon {
     public String getType() {
         return "Pentagon";
     }
+
+    @Override
+    public Integer getNumberOfSides() {
+        return 5;
+    }
 }

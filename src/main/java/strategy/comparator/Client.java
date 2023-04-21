@@ -44,8 +44,7 @@ public class Client {
         Collections.sort(names, (a,b) -> Integer.compare(a.length(), b.length()));
         System.out.println(names);
 
-        Collections.sort(names, Comparator.comparingInt(String::length));
-        System.out.println(names);
+
 
 
     }

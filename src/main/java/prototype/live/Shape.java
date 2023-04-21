@@ -1,8 +1,11 @@
-package prototype.refactoringguru;
+package prototype.live;
+
+
 
 import java.util.Objects;
 
-public abstract class Shape implements ClonableInterface {
+public abstract class Shape implements Copiable {
+
     private int x;
     private int y;
     private String color;
@@ -13,14 +16,12 @@ public abstract class Shape implements ClonableInterface {
         this.color = color;
     }
 
-    protected  Shape(Shape target) {
-        if (target != null) {
-            this.x = target.x;
-            this.y = target.y;
-            this.color = target.color;
-        }
+    //copy constructor
+    public Shape(Shape aCopiar){
+        this.x = aCopiar.x;
+        this.y = aCopiar.y;
+        this.color = aCopiar.color;
     }
-
 
 
     @Override

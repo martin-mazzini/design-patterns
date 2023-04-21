@@ -1,4 +1,6 @@
-package prototype.refactoringguru;
+package prototype.live;
+
+
 
 public class Rectangle extends Shape {
 
@@ -12,16 +14,12 @@ public class Rectangle extends Shape {
         this.height = height;
     }
 
-    protected Rectangle(Rectangle target) {
-        super(target);
-        this.width = target.width;
-        this.height = target.height;
+    public Rectangle(Rectangle aCopiar){
+        super(aCopiar);
+        this.width = aCopiar.width;
+        this.height = aCopiar.height;
     }
 
-    @Override
-    public Shape cloneObject() {
-        return new Rectangle(this);
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -38,5 +36,10 @@ public class Rectangle extends Shape {
                 "width=" + width +
                 ", height=" + height +
                 '}' + " "+  super.toString();
+    }
+
+    @Override
+    public Shape copy() {
+        return new Rectangle(this);
     }
 }
