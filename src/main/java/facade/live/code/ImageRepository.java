@@ -7,4 +7,6 @@ public interface ImageRepository {
     List<BufferedImage> loadImages(String path);
 
     void saveImages(List<BufferedImage> images);
+
+    List<BufferedImage> loadImage(String path);
 }

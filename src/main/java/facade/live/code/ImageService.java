@@ -48,7 +48,14 @@ public class ImageService {
 
     }
 
-    public List<BufferedImage> listImages(String path){
+
+    public List<BufferedImage> getImages(String path){
+        logger.info("Listing images");
+        return imageRepository.loadImage(path);
+
+    }
+
+    public List<BufferedImage> listImages(String path, Integer pageNumber, Integer pageSize){
         logger.info("Listing images");
         return imageRepository.loadImages(path);
 

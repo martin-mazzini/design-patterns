@@ -15,4 +15,9 @@ public class ImageRepositoryImpl implements ImageRepository{
     public void saveImages(List<BufferedImage> images) {
 
     }
+
+    @Override
+    public List<BufferedImage> loadImage(String path) {
+        return null;
+    }
 }
