@@ -12,6 +12,8 @@ public class Client {
 
     public static void main(String[] args) {
 
+        //Que le vemos mal a este codigo?
+        //Como lo mejorariamos?
 
         ImageService imageService =
                 new ImageService(ImageType.JPG, new ImageColourFilter(Colour.RED), new ImageCache(), Path.of("/directory/images"),

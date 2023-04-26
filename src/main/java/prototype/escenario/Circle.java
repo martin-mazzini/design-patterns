@@ -1,7 +1,6 @@
-package prototype.live;
+package prototype.escenario;
 
 
-import prototype.live.Shape;
 
 public class Circle extends Shape {
 
@@ -32,11 +31,10 @@ public class Circle extends Shape {
                 '}' + " "+ super.toString();
     }
 
-    public int getRadius() {
-        return radius;
+    @Override
+    public Shape copy() {
+       return new Circle(this);
     }
 
-    public void setRadius(int radius) {
-        this.radius = radius;
-    }
+
 }

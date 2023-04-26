@@ -1,6 +1,6 @@
 package prototype.live;
 
-import com.sun.nio.sctp.SctpSocketOption;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,58 +9,59 @@ public class Client {
 
 
     public static void main(String[] args) {
-
-
-
         List<Shape> formas = new ArrayList<>();
         formas.add(new Circle(10,40,"red", 20));
         formas.add(new Rectangle(100,1000, "blue", 999,9999));
+        formas.add(new Rectangle(12100,100, "green", 999,9999));
 
+        ArrayList<Shape> shapeCopies = new ArrayList<>();
         for (Shape shape:  formas){
-            Shape copy = shape.copy();
-            System.out.println(copy.toString());
+            //COPIAR la forma
+            Shape copy = copyShape(shape);
+            shapeCopies.add(copy);
         }
 
 
 
+    }
 
-
-
-
-
-        Circle circulo = new Circle(10, 40, "rojo", 5);
-        //primer problema, no contamos con getters para los campos que necesitamos copiar
-        //y si lo crearamos, podriamos estar rompiendo el encapsulamiento deseado para la clase
-
-        //segundo problema, si estamos trabajando con una jerarquia de objetos,
-        //y estamos tabajando con la clase base de esa jerarquia
-        //al momento de copiar, no sabemos que clase concreta es la que tenemos que inicializar y copiar
-
-
-        List<Shape> formas2 = new ArrayList<>();
-        formas2.add(new Circle(2, 20, "red", 1));
-        formas2.add(new Rectangle(10, 10, "blue", 100, 20));
+    //Como rellenamos este método?
+    //Como sabemos con que clase estamos trabajando?
+    //Encapsulamiento?
+    private static Shape copyShape(Shape shape) {
+        return null;
     }
 
 
 
 
 
+
+    //Copy constructor vs copia manual
+    /**
+     * Consistent syntax: Copy constructors provide a consistent way to create copies of objects, following the constructor pattern. This can make the code more readable and maintainable.
+     *
+     * Deep copy: In some cases, a class may contain complex data structures or references to other objects. A copy constructor can ensure that a deep copy is performed, correctly handling the copying of these internal objects, whereas a normal method may not handle this as expected, resulting in shallow copies or shared references.
+     *
+     * Encapsulation: A copy constructor allows you to keep the copying logic within the class itself, preserving the encapsulation of the class. This is beneficial for maintenance and ensuring that the class's internal state is correctly managed.
+     *
+     * Ease of use: A copy constructor is automatically called when an object is initialized with another object of the same class, making it easy to use without having to call a separate method for copying.
+     *
+     * Control over copying: A copy constructor gives you more control over how the copying process should be performed, allowing you to handle specific cases that may require special treatment or optimizations.
+     */
+
   /*  public Shape copiar(Shape shape){
-        if (shape instanceof Circle){
-            //generamos un circulo y le copiamos las propiedades
-            // Circle circle = new Circle();
+      if (shape instanceof Circle){
+            Circle circle = (Circle) shape;
+            circle.setRadius(circle.getRadius());
+            circle.setColor(circle.getColor());
+            circle.setX(circle.getX());
+            circle.setY(circle.getY());
         }
     }*/
 
 
 
-    //no compila porque no tenemos que getters
-/*
-    public Circle copiar(Circle aCopiar){
-        new Circle(aCopiar.getX(), aCopiar.getY())
-    }
-*/
 
 
 

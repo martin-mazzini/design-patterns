@@ -1,4 +1,5 @@
-package prototype.live;
+package prototype.escenario;
+
 
 
 public class Rectangle extends Shape {
@@ -37,19 +38,8 @@ public class Rectangle extends Shape {
                 '}' + " "+  super.toString();
     }
 
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
+    @Override
+    public Shape copy() {
+        return new Rectangle(this);
     }
 }
