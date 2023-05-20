@@ -52,4 +52,9 @@ public class Rectangle extends Shape {
     public void setHeight(int height) {
         this.height = height;
     }
+
+    @Override
+    public Shape clone() {
+        return null;
+    }
 }

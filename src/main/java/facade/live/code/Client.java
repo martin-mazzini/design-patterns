@@ -12,12 +12,18 @@ public class Client {
 
     public static void main(String[] args) {
 
-        //Que le vemos mal a este codigo?
-        //Como lo mejorariamos?
+        //Tenemos un servicio que utiliza:
+        //Un repositorio de imagenes
+        //Una libreria de procesamiento de imagenes
 
-        ImageService imageService =
-                new ImageService(ImageType.JPG, new ImageColourFilter(Colour.RED), new ImageCache(), Path.of("/directory/images"),
-                new ImageRepositoryImpl(), LoggerFactory.getLogger("ImageService"));
+        //Como estructuramos el servico de la mejor manera?
+        //Vemos algun problema? Prestar atencion a:
+        //Cantidad de parametros en el constructor
+        //Facilidad de leer el codigo
+        //Abstraccion
+        //Facilidad de mantenimiento, en especial en relacion a la libreria
+
+
 
 
     }

@@ -6,9 +6,9 @@ import prototype.escenario.Copiable;
 
 import java.util.Objects;
 
-public abstract class Shape  {
+public abstract class Shape implements Clonable {
 
-    private int x;
+    protected int x;
     private int y;
     private String color;
 
@@ -23,6 +23,10 @@ public abstract class Shape  {
         this.x = aCopiar.x;
         this.y = aCopiar.y;
         this.color = aCopiar.color;
+    }
+
+    public Shape() {
+
     }
 
 
@@ -42,29 +46,6 @@ public abstract class Shape  {
                 '}';
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
 
 
 

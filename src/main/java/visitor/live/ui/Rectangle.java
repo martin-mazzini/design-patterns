@@ -2,7 +2,7 @@ package visitor.live.ui;
 
 import java.awt.*;
 
-public class Rectangle {
+public class Rectangle implements Shape {
     public BasicStroke getStyle() {
         return null;
     }
@@ -22,5 +22,9 @@ public class Rectangle {
 
     public int getHeight() {
         return 0;
+    }
+
+    public void renderHTML(){
+
     }
 }

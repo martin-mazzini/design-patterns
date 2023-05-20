@@ -8,29 +8,39 @@ import java.util.List;
 public class Client {
 
 
+    private Integer nombre;
+    private Integer integer;
+
     public static void main(String[] args) {
         List<Shape> formas = new ArrayList<>();
         formas.add(new Circle(10,40,"red", 20));
         formas.add(new Rectangle(100,1000, "blue", 999,9999));
         formas.add(new Rectangle(12100,100, "green", 999,9999));
 
+
         ArrayList<Shape> shapeCopies = new ArrayList<>();
         for (Shape shape:  formas){
-            //COPIAR la forma
-            Shape copy = copyShape(shape);
+            Shape copy = shape.clone();
             shapeCopies.add(copy);
         }
 
-
-
     }
 
-    //Como rellenamos este método?
-    //Como sabemos con que clase estamos trabajando?
-    //Encapsulamiento?
-    private static Shape copyShape(Shape shape) {
-        return null;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

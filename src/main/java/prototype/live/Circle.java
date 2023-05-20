@@ -18,6 +18,10 @@ public class Circle extends Shape {
         this.radius = aCopiar.radius;
     }
 
+    public Circle() {
+        super();
+    }
+
     @Override
     public boolean equals(Object object2) {
         if (!(object2 instanceof Circle) || !super.equals(object2)) return false;
@@ -38,5 +42,10 @@ public class Circle extends Shape {
 
     public void setRadius(int radius) {
         this.radius = radius;
+    }
+
+    @Override
+    public Shape clone() {
+        return null;
     }
 }

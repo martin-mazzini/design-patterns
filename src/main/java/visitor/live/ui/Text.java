@@ -1,6 +1,6 @@
 package visitor.live.ui;
 
-public class Text {
+public class Text implements Shape {
     public int getX() {
         return 0;
     }
@@ -16,4 +16,6 @@ public class Text {
     public int getContent() {
         return 0;
     }
+
+    public void renderHTML(){}
 }

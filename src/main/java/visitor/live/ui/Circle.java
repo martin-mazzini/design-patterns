@@ -1,6 +1,6 @@
 package visitor.live.ui;
 
-public class Circle {
+public class Circle implements Shape {
     public int getCx() {
         return 0;
     }
@@ -16,4 +16,18 @@ public class Circle {
     public int getStyle() {
         return 0;
     }
+
+
+    public void renderHTML(){
+
+    }
+
+    public void renderSVG(){
+
+    }
+
+    public void renderCanvas(){
+
+    }
+
 }

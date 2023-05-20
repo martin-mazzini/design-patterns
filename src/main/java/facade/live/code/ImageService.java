@@ -1,6 +1,9 @@
 package facade.live.code;
 
-import facade.live.image_processing_library.*;
+import facade.live.image_processing_library.ImageCache;
+import facade.live.image_processing_library.ImageColourFilter;
+import facade.live.image_processing_library.ImageProcessor;
+import facade.live.image_processing_library.ImageType;
 import org.slf4j.Logger;
 
 import java.awt.image.BufferedImage;
@@ -15,7 +18,6 @@ public class ImageService {
     private ImageCache imageCache;
     private Path path;
     private ImageRepository imageRepository;
-    private Logger logger;
 
     public ImageService(ImageType type, ImageColourFilter colourFilter, ImageCache imageCache, Path path, ImageRepository imageRepository, Logger logger) {
         this.type = type;
@@ -26,8 +28,18 @@ public class ImageService {
         this.logger = logger;
     }
 
+    private Logger logger;
+
+
+
     public BufferedImage processImage(BufferedImage bufferedImage){
 
+        List<BufferedImage> imageList = imageRepository.loadImage(path.toString());
+
+        boolean valid = validateImages(imageList);
+        if (!valid){
+            throw new RuntimeException("Imagenes no validas");
+        }
 
         ImageProcessor imageProcessor = new ImageProcessor();
         imageProcessor.setImageType(type);
@@ -45,22 +57,19 @@ public class ImageService {
 
         BufferedImage processedImage = imageProcessor.processImage();
         return processedImage;
+    }
 
+    private boolean validateImages(List<BufferedImage> imageList) {
+        //chequea que las imagenes sean validas de acuerdo a cierta logica de negocio
+        return true;
     }
 
 
     public List<BufferedImage> getImages(String path){
-        logger.info("Listing images");
+        logger.info("Get images");
         return imageRepository.loadImage(path);
 
     }
-
-    public List<BufferedImage> listImages(String path, Integer pageNumber, Integer pageSize){
-        logger.info("Listing images");
-        return imageRepository.loadImages(path);
-
-    }
-
 
     public void saveImages(List<BufferedImage> images){
         logger.info("Saving images");
