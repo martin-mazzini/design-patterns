@@ -3,9 +3,9 @@ package proxy.live;
 public class Service {
 
 
-    private PostRepository postRepository;
+    private PostRepositoryImpl postRepository;
 
-    public Service(PostRepository postRepository) {
+    public Service(PostRepositoryImpl postRepository) {
         this.postRepository = postRepository;
     }
 

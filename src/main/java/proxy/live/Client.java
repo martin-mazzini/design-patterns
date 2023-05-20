@@ -6,8 +6,8 @@ public class Client {
 
     public static void main(String[] args) {
 
-        PostRepository postRepository = new PostRepositoryImpl();
-        Service service = new Service(new PostRepositoryTimedProxy(new PostRepositoryImpl()));
+        PostRepositoryImpl postRepository = new PostRepositoryImpl();
+        Service service = new Service(postRepository);
         service.procesar();
 
 
