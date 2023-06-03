@@ -1,7 +1,6 @@
 package factorypattenrs.live.simplefactorymethod;
 
-import factorypattenrs.factorymethod.polygons.Polygon;
-import factorypattenrs.live.abstractfactory.ColoredPolygons;
+import factorypattenrs.factorymethod.solucion.polygons.Polygon;
 
 public  class PolygonService {
 

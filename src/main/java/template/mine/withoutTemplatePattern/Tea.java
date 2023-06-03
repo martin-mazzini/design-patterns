@@ -1,14 +1,19 @@
 package template.mine.withoutTemplatePattern;
 
-public class Tea {
+public class Tea extends BebidaInfusionada {
 
 
-    public void prepareRecipe () {
-        System.out.println ("Boiling Water");
-        System.out.println ("Steeping the tea");
-        System.out.println ("Pouring into Cup");
-        System.out.println ("Adding lemon");
+    public Tea(String nombre) {
+        super(nombre);
     }
 
+    @Override
+    protected void agregarCondimentos() {
+        System.out.println("agregar limons");
+    }
 
+    @Override
+    protected void infusionar() {
+        System.out.println("poner el saquito");
+    }
 }

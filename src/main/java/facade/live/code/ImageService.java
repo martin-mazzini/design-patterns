@@ -13,63 +13,42 @@ import java.util.List;
 public class ImageService {
 
 
-    private ImageType type;
-    private ImageColourFilter colourFilter;
-    private ImageCache imageCache;
-    private Path path;
+    private ImageProcessingFacade facade;
+    private Logger logger;
     private ImageRepository imageRepository;
 
-    public ImageService(ImageType type, ImageColourFilter colourFilter, ImageCache imageCache, Path path, ImageRepository imageRepository, Logger logger) {
-        this.type = type;
-        this.colourFilter = colourFilter;
-        this.imageCache = imageCache;
-        this.path = path;
+
+    public ImageService(ImageProcessingFacade facade, ImageRepository imageRepository, Logger logger) {
+        this.facade = facade;
         this.imageRepository = imageRepository;
         this.logger = logger;
     }
 
-    private Logger logger;
 
+    public BufferedImage processImage(Long id){
 
+        BufferedImage bufferedImage = imageRepository.loadImage(id.toString());
 
-    public BufferedImage processImage(BufferedImage bufferedImage){
-
-        List<BufferedImage> imageList = imageRepository.loadImage(path.toString());
-
-        boolean valid = validateImages(imageList);
+        boolean valid = validateImages(bufferedImage);
         if (!valid){
             throw new RuntimeException("Imagenes no validas");
         }
 
-        ImageProcessor imageProcessor = new ImageProcessor();
-        imageProcessor.setImageType(type);
-        imageProcessor.setFilter(colourFilter);
-
-        try {
-            imageProcessor.configureImageProcessor(90, bufferedImage.getWidth(), bufferedImage.getHeight());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        imageProcessor.readImage(bufferedImage);
-        imageProcessor.setCache(imageCache);
-        imageProcessor.setLoadPath(path);
-
-        BufferedImage processedImage = imageProcessor.processImage();
+        BufferedImage processedImage = facade.filterRedColor(bufferedImage);
         return processedImage;
     }
 
-    private boolean validateImages(List<BufferedImage> imageList) {
+
+
+
+
+
+    private boolean validateImages(BufferedImage imageList) {
         //chequea que las imagenes sean validas de acuerdo a cierta logica de negocio
         return true;
     }
 
 
-    public List<BufferedImage> getImages(String path){
-        logger.info("Get images");
-        return imageRepository.loadImage(path);
-
-    }
 
     public void saveImages(List<BufferedImage> images){
         logger.info("Saving images");

@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class PostRepositoryImpl  {
+public class PostRepositoryImpl implements PostRepository {
 
 
 
@@ -23,7 +23,6 @@ public class PostRepositoryImpl  {
                     response.append(inputLine);
                 }
                 in.close();
-                System.out.println(response.toString());
                 return response.toString();
             } else {
                 System.out.println("GET request failed");

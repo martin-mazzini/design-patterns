@@ -17,7 +17,7 @@ public class ImageRepositoryImpl implements ImageRepository{
     }
 
     @Override
-    public List<BufferedImage> loadImage(String path) {
+    public BufferedImage loadImage(String path) {
         return null;
     }
 }

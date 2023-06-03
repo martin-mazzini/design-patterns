@@ -1,28 +1,27 @@
 package strategy.live;
 
-
-import strategy.live.strategies.CreditCardStrategy;
-import strategy.live.strategies.PaypalStrategy;
-import strategy.mine.Item;
-
 public class Client {
-
 
     public static void main(String[] args) {
 
-        ShoppingCart shoppingCart = new ShoppingCart(new PaypalStrategy("mmm@gmail.com", "sdhr73b"));
 
-        shoppingCart.addItem(new Item(3));
-        shoppingCart.addItem(new Item(10));
+        //Definir distintas estrategias de pago
+        //No queremos una cadena de if-else o switch
+        //Queremos que la logica del metodo de pago quede separada del shopping cart
+        //Queremos tener Open closed principle
+        //Querriamos poder cambiarlo durante el tiempo de ejecucion (runtime) si fuera necesario
 
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.addItem(new Item(34));
+        shoppingCart.addItem(new Item(60));
         shoppingCart.pay();
 
-        shoppingCart.addItem(new Item(10));
-        shoppingCart.setPaymentMethod(new CreditCardStrategy("jsdsd", "4738 43874 4387 4387", "376", "01/23"));
-        shoppingCart.pay();
+
+
 
 
     }
-
-
 }
+
+
+

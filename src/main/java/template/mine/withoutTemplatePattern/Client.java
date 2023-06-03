@@ -17,12 +17,13 @@ public class Client {
         //Facilidad de extender el codigo
 
 
-        Coffee coffee = new Coffee();
+        BebidaInfusionada bebidaInfusionada = new Tea("te");
+        Coffee coffee = new Coffee("cafe");
         System.out.println("----------------------PREPARING COFFE--------------------------");
         coffee.prepareRecipe();;
 
         System.out.println("----------------------------PREPARING TEA------------------------------");
-        Tea tea = new Tea();
+        Tea tea = new Tea("te");
         tea.prepareRecipe();;
 
 

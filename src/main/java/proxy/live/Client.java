@@ -11,11 +11,8 @@ public class Client {
         //O no podemos (si es una libreria)
         //Queremos que sea facil volver a la version sin logging
 
-        PostRepositoryImpl postRepository = new PostRepositoryImpl();
-        Service service = new Service(postRepository);
+        Service service = new Service(new TimeLoggingPostRepository());
         service.procesar();
-
-
 
     }
 
