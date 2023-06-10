@@ -1,35 +1,30 @@
-package observer.live;
+package observer.live2;
 
-public class Tarea {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Tarea  {
     private Integer porcentaje;
     private String estado;
 
-    public Tarea(Integer porcentaje, String estado) {
-        this.porcentaje = porcentaje;
-        this.estado = estado;
+
+
+    public Tarea() {
+        this.porcentaje = 0;
+        this.estado = "INICIALIZANDO";
     }
 
-    public Integer getPorcentaje() {
-        return porcentaje;
+    public void ejecutar(){
+        this.estado = "EJECUTANDO";
+        for (int i = 0; i < 9; i++) {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            this.porcentaje = (i + 1) * 10;
+        }
+        this.estado = "FINALIZADA";
     }
 
-    public void setPorcentaje(Integer porcentaje) {
-        this.porcentaje = porcentaje;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    @Override
-    public String toString() {
-        return "Tarea{" +
-                "porcentaje=" + porcentaje +
-                ", estado='" + estado + '\'' +
-                '}';
-    }
 }

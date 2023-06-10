@@ -1,9 +1,8 @@
-package observer.live;
+package observer.live2;
+
+
 
 public class Client {
-
-
-
 
 
 
@@ -14,22 +13,9 @@ public class Client {
 
     public static void main(String[] args) {
 
-        TareaPublisher tareaPublisher = new TareaPublisher();
 
-        BdSubscriber bdSubscriber = new BdSubscriber();
-        tareaPublisher.addSubscriber(bdSubscriber);
-        LoggerSubscriber loggerSubscriber = new LoggerSubscriber();
-        tareaPublisher.addSubscriber(loggerSubscriber);
-
-        tareaPublisher.setStatus("INICIALIZANDO");
-
-        tareaPublisher.setStatus("COMPLETADO");
-        tareaPublisher.setStatus("ERROR");
-
-        tareaPublisher.removeSubscriber(bdSubscriber);
-        System.out.println("LUEGO DE REMOVER AL SUBSCRIBER DE LA BD");
-        tareaPublisher.setStatus("COMPLETADO");
-
+        Tarea tarea = new Tarea();
+        tarea.ejecutar();
 
 
 
